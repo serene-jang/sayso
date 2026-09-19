@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log*
+server/.env
+.git
+.gitignore
+AGENT.md
+prd.md
+run-sayso.bat

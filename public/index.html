@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAYSO</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#home" data-view="home">SAYSO<small>말을 더 잘 전하는 방법</small></a>
+      <nav class="main-nav" aria-label="주요 메뉴">
+        <button class="nav-item is-active" type="button" data-view="home"><span class="nav-icon">⌂</span>홈</button>
+        <button class="nav-item" type="button" data-view="compose"><span class="nav-icon">＋</span>새 메시지</button>
+        <button class="nav-item" type="button" data-view="inspect"><span class="nav-icon">✓</span>문장 검사</button>
+        <button class="nav-item" type="button" data-view="contacts"><span class="nav-icon">○</span>대화 관리</button>
+      </nav>
+      <p class="sidebar-footer">당신의 의도는 그대로,<br>표현은 더 분명하게.</p>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Communication assistant</p>
+          <h1>안녕하세요, SAYSO입니다.</h1>
+        </div>
+        <span class="avatar" aria-label="프로필">S</span>
+      </header>
+
+      <section class="view is-visible" id="home-view" aria-labelledby="home-title">
+        <div class="hero-panel">
+          <div>
+            <p class="eyebrow">Say what you mean</p>
+            <h2 id="home-title">하고 싶은 말은 있는데,<br>어떻게 말해야 할지 모르겠을 때.</h2>
+            <p>상대방과 상황에 맞는 표현을 만들고, 보내기 전에 한 번 더 살펴보세요.</p>
+          </div>
+          <div class="hero-note">상대방, 상황, 원하는 느낌만 알려주면<br>나머지는 SAYSO가 함께 정리해요.</div>
+        </div>
+
+        <div class="action-grid" aria-label="빠른 작업">
+          <button class="action-card" type="button" data-view="compose"><span class="action-symbol">＋</span><strong>새 메시지 작성</strong><span>상황에 맞는 문장을 만들어보세요.</span></button>
+          <button class="action-card" type="button" data-view="inspect"><span class="action-symbol">✓</span><strong>문장 검사</strong><span>보내기 전 어색한 부분을 확인하세요.</span></button>
+          <button class="action-card" type="button" data-view="contacts"><span class="action-symbol">○</span><strong>대화 관리</strong><span>자주 연락하는 상대를 모아보세요.</span></button>
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="card">
+            <h3>최근 대화</h3>
+            <ul class="list">
+              <li class="list-item"><div><strong>김○○ 교수님</strong><span>과제 제출 일정</span></div><span>어제</span></li>
+              <li class="list-item"><div><strong>인사팀 담당자</strong><span>면접 일정 문의</span></div><span>3일 전</span></li>
+            </ul>
+          </section>
+          <section class="card">
+            <h3>자주 연락한 상대방</h3>
+            <ul class="list">
+              <li class="list-item"><div><strong>김○○ 교수님</strong><span>최근 연락 2026.09.03</span></div><span>›</span></li>
+              <li class="list-item"><div><strong>회사 담당자</strong><span>최근 연락 2026.08.28</span></div><span>›</span></li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="view" id="compose-view" aria-labelledby="compose-title">
+        <div class="view-header"><p class="eyebrow">New message</p><h2 id="compose-title">무슨 말을 전하고 싶나요?</h2><p>상대방과 상황을 알려주면 자연스러운 표현을 준비해드려요.</p></div>
+        <div class="form-layout"><form class="card form-card" id="compose-form" novalidate><div class="field"><label for="recipient">누구에게?</label><select id="recipient" name="recipient"><option value="교수님">교수님</option><option value="선생님">선생님</option><option value="회사 담당자">회사 담당자</option><option value="상사">상사</option><option value="친구">친구</option><option value="기타">기타</option></select></div><div class="field"><label for="situation">무슨 상황인가요?</label><input id="situation" name="situation" type="text" placeholder="예: 과제 제출 기한을 문의하려고 해요."><p class="field-error" id="situation-error" role="alert"></p></div><div class="field"><label for="purpose">무엇을 부탁하거나 전달하려고 하나요?</label><input id="purpose" name="purpose" type="text" placeholder="예: 제출 기한을 하루 연장하고 싶어요."><p class="field-error" id="purpose-error" role="alert"></p></div><div class="field"><label for="message">하고 싶은 말을 적어주세요</label><textarea id="message" name="message" placeholder="편하게 적어주세요."></textarea><p class="field-error" id="message-error" role="alert"></p></div><div class="field"><label for="tone">어떤 느낌으로 말할까요?</label><select id="tone" name="tone"><option value="자연스럽게">자연스럽게</option><option value="정중하게">정중하게</option><option value="매우 정중하게">매우 정중하게</option><option value="간단하게">간단하게</option></select></div><div class="button-row"><button class="primary-button" type="submit">SAYSO로 작성하기</button><button class="secondary-button" type="button" data-view="home">취소</button></div><p class="form-status" id="compose-status" role="status" aria-live="polite"></p></form><aside class="card"><h3>작성 가이드</h3><p class="muted">완벽한 문장이 아니어도 괜찮아요. 핵심 내용과 원하는 느낌만 적어주세요.</p><p class="muted">사실이나 이유를 꼭 넣을 필요는 없어요. SAYSO는 입력한 의도를 임의로 바꾸지 않습니다.</p></aside></div>
+      </section>
+
+      <section class="view" id="result-view" aria-labelledby="result-title"><div class="view-header"><p class="eyebrow">Your message</p><h2 id="result-title">이렇게 말해볼 수 있어요.</h2><p>원하는 표현을 고르고 보내기 전에 검사해보세요.</p></div><div class="result-list" id="result-list"><div class="card"><h3>추천 표현</h3><p class="muted">작성 화면에서 내용을 입력하면 결과가 표시됩니다.</p></div></div><p class="form-status" id="result-status" role="status" aria-live="polite"></p></section>
+
+        <section class="view" id="inspect-view" aria-labelledby="inspect-title"><div class="view-header"><p class="eyebrow">Before you send</p><h2 id="inspect-title">보내기 전에 한 번 더 살펴볼까요?</h2><p>작성한 문장의 자연스러움과 오해 가능성을 확인합니다.</p></div><div class="form-layout"><form class="card form-card" id="inspect-form" novalidate><div class="field"><label for="inspect-text">검사할 문장</label><textarea id="inspect-text" placeholder="검사할 문장을 붙여넣어 주세요."></textarea><p class="field-error" id="inspect-error" role="alert"></p></div><button class="primary-button" type="submit">문장 검사하기</button><p class="form-status" id="inspect-status" role="status" aria-live="polite"></p></form><aside class="card"><h3>문장 상태</h3><div class="status-list" id="inspection-status-list"><div class="status-row"><span>문장을 입력하면 검사 결과가 표시됩니다.</span></div></div></aside></div><section class="card issue-panel" id="inspection-issues" aria-live="polite"><h3>확인할 점</h3><p class="muted">검사 결과가 이곳에 표시됩니다.</p></section><section class="card refine-panel"><h3>AI로 문장 개선하기</h3><div class="refine-controls"><select id="refine-direction" aria-label="문장 개선 방향"><option value="polite">더 정중하게</option><option value="natural">더 자연스럽게</option><option value="shorter">더 짧게</option><option value="softer">덜 딱딱하게</option><option value="clearer">더 명확하게</option></select><button class="primary-button" id="refine-button" type="button">AI로 개선하기</button></div><p class="refined-text" id="refined-text" aria-live="polite"></p><p class="form-status" id="refine-status" role="status" aria-live="polite"></p></section></section>
+
+      <section class="view" id="contacts-view" aria-labelledby="contacts-title"><div class="view-header"><p class="eyebrow">Your conversations</p><h2 id="contacts-title">상대방별로 대화를 정리해보세요.</h2><p>이전 맥락을 기억해두면 다음 연락이 더 쉬워집니다.</p></div><div class="form-layout"><form class="card form-card" id="contact-form" novalidate><div class="field"><label for="contact-name">상대방 이름</label><input id="contact-name" name="name" type="text" placeholder="예: 김○○ 교수님"><p class="field-error" id="contact-name-error" role="alert"></p></div><div class="field"><label for="contact-topic">대화 주제</label><input id="contact-topic" name="topic" type="text" placeholder="예: 과제 제출 일정"></div><div class="field"><label for="contact-message">최근 대화 내용</label><textarea id="contact-message" name="message" placeholder="다음 연락에 참고할 내용을 적어주세요."></textarea></div><div class="button-row"><button class="primary-button" type="submit">상대방 저장</button><button class="secondary-button" type="button" id="contact-reset">새로 입력</button></div><p class="form-status" id="contact-status" role="status" aria-live="polite"></p></form><section class="card"><h3>저장된 상대방</h3><ul class="list" id="contacts-list"><li class="muted">저장된 상대방이 없습니다.</li></ul></section></div></section>
+    </main>
+  </div>
+
+  <script src="/js/api-config.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
